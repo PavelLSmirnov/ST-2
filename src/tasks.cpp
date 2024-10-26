@@ -5,14 +5,14 @@
 #include "circle.h"
 #include "tasks.h"
 
-double Tasks::calculateDeltaRadius(Circle circle, double length) {
+double calculateDeltaRadius(Circle circle, double length) {
     double new_ference = circle.getFerence() + length;
     double new_radius = new_ference / 2 * M_PI;
     double result = new_radius - circle.getRadius();
     return result;
 }
 
-std::vector<double> Tasks::calculatePoolPrice(
+std::vector<double> calculatePoolPrice(
     Circle pool,
     double path_price,
     double fence_price,

@@ -1,4 +1,4 @@
-
+// Copyright 2024 Smirnov Pavel
 #include <gtest/gtest.h>
 #include <cstdint>
 #include <cmath>
@@ -43,7 +43,7 @@ TEST(CircleTest, CheckFerence2) {
 TEST(TaskTest, CheckEarth1) {
     double earth_radius = 6378.1 * pow(10, 3);
     Circle earth(earth_radius);
-    double delta = Tasks::calculateDeltaRadius(earth, 1.0);
+    double delta = calculateDeltaRadius(earth, 1.0);
 
     double expected_delta = 56571225.401384361;
     EXPECT_EQ(delta, expected_delta);
@@ -52,7 +52,7 @@ TEST(TaskTest, CheckEarth1) {
 TEST(TaskTest, CheckEarth2) {
     double earth_radius = 6378.1 * pow(10, 3);
     Circle earth(earth_radius);
-    double delta = Tasks::calculateDeltaRadius(earth, 2.0);
+    double delta = calculateDeltaRadius(earth, 2.0);
 
     double expected_delta = 56571226.972180687;
     EXPECT_EQ(delta, expected_delta);
@@ -61,7 +61,7 @@ TEST(TaskTest, CheckEarth2) {
 TEST(TaskTest, CheckPool1) {
     double pool_radius = 3;
     Circle pool(pool_radius);
-    std::vector<double> result = Tasks::calculatePoolPrice(pool, 1000, 2000, 1);
+    std::vector<double> result = calculatePoolPrice(pool, 1000, 2000, 1);
 
     std::vector<double> expected_result = {
         50265.482457436687,
@@ -73,7 +73,7 @@ TEST(TaskTest, CheckPool1) {
 TEST(TaskTest, CheckPool2) {
     double pool_radius = 3;
     Circle pool(pool_radius);
-    std::vector<double> result = Tasks::calculatePoolPrice(pool, 1000, 2000, 1);
+    std::vector<double> result = calculatePoolPrice(pool, 1000, 2000, 1);
 
     std::vector<double> expected_result = {
         10,
